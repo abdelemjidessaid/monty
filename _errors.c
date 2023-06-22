@@ -40,7 +40,7 @@ void monty_usage(void)
 */
 void push_error(unsigned int line_number)
 {
-	fprintf(stderr, "L%u:usage: push integer\n", line_number);
+	fprintf(stderr, "L%u: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
 

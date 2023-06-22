@@ -86,11 +86,13 @@ void monty_usage();
 void push_error(unsigned int line_number);
 void inst_error(unsigned int line_number, char *opcode);
 void pint_error(unsigned int line_number);
+void pop_error(unsigned int line_number);
 
 /* --------- INSTRUCTIONS --------- */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 
 

@@ -55,3 +55,32 @@ void _pint(stack_t **stack, unsigned int line_number)
 	else
 		pint_error(line_number);
 }
+
+
+/**
+ * _pop - function that removes the top element of stack.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of current line.
+ * Return: void.
+*/
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *p, *tmp;
+
+	if (!stack)
+		pop_error(line_number);
+	p = *stack;
+	if (!p)
+		pop_error(line_number);
+
+	tmp = p->next;
+	if (!tmp)
+	{
+		*stack = NULL;
+		free(p);
+		return;
+	}
+	tmp->prev = NULL;
+	*stack = tmp;
+	free(p);
+}
