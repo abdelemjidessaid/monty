@@ -19,6 +19,7 @@ int word_count(char *line)
 		count++;
 		w = strtok(NULL, " \t\n");
 	}
+	free(dup);
 
 	return (count);
 }

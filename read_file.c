@@ -38,4 +38,23 @@ void read_file(void)
 		count++;
 	}
 	free(line);
+	free_array(array);
+}
+
+/**
+ * free_array - function that frees the array used in read_file function.
+ * @array: array of strings.
+ * Return: void.
+*/
+void free_array(char **array)
+{
+	int i = 0;
+
+	if (!array)
+		return;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
 }

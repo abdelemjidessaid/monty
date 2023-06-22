@@ -21,8 +21,29 @@ int main(int argc, char *argv[])
 	var.stack = &stack;
 
 	read_file();
+	free_stack();
 
-	/* free stack, array, line, header objects*/
+	/* free stack, array, line*/
 
 	return (0);
+}
+
+/**
+ * free_stack - function that frees stack in the global var.
+ * Return: void.
+*/
+void free_stack(void)
+{
+	stack_t *p, *tmp;
+
+	if (var.stack)
+	{
+		p = *(var.stack);
+		while (p)
+		{
+			tmp = p;
+			p = p->next;
+			free(tmp);
+		}
+	}
 }

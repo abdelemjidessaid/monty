@@ -94,6 +94,11 @@ void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 
+/* --------- MEMORY ---------*/
+void free_array(char **array);
+void free_stack(void);
+
+
 
 
 #endif /* _MANAGER_H_ */

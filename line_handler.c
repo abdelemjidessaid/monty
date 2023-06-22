@@ -26,6 +26,7 @@ char **handle_line(char *line)
 		word = strtok(NULL, " \t\n");
 	}
 	array[i] = NULL;
+	free(line);
 
 	return (array);
 }
