@@ -20,3 +20,15 @@ void _add(stack_t **stack, unsigned int line_number)
 	*stack = next;
 	free(top);
 }
+
+/**
+ * _nop - function that do nothing.
+ * @stack: pointer of pointer to stack.
+ * @line_number: number of instruction's line.
+ * Return: void.
+*/
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
