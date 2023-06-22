@@ -43,3 +43,14 @@ void add_error(unsigned int line_number)
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * sub_error - function that prints an error about sub instruction.
+ * @line_number: number of current instruction's line.
+ * Return: void.
+*/
+void sub_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}

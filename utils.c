@@ -40,6 +40,7 @@ function find_function(char *opcode)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}
 	};
 	int i = 0;
