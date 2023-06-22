@@ -76,17 +76,21 @@ int word_count(char *line);
 char *_strdup(char *str);
 char **handle_line(char *line);
 char **split_line(char *line);
+int is_num(char *num);
+function find_function(char *opcode);
+
+/* ----------ERROR FUNCTIONS ----------*/
 void malloc_error();
 void cannot_open_file();
 void monty_usage();
 void push_error(unsigned int line_number);
 void inst_error(unsigned int line_number, char *opcode);
-int is_num(char *num);
-function find_function(char *opcode);
+void pint_error(unsigned int line_number);
 
 /* --------- INSTRUCTIONS --------- */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
 
 
 

@@ -31,6 +31,7 @@ function find_function(char *opcode)
 	instruction_t fs[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	int i = 0;
