@@ -13,7 +13,7 @@ int is_num(char *num)
 	{
 		for (i = 0; num[i]; i++)
 		{
-			if (i == 0 && (num[0] == '-' || num[0] == '+'))
+			if (i == 0 && num[0] == '-')
 				continue;
 			if (num[i] < '0' || num[i] > '9')
 				return (0);
