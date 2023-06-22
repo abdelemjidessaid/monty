@@ -33,7 +33,7 @@ void _pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 }
 
 /**
- * pint - function that prints the top element in stack.
+ * _pint - function that prints the top element in stack.
  * @stack: pointer of pointer to the stack.
  * @line_number: number of current line.
  * Return: void.
