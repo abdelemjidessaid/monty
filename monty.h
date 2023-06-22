@@ -75,6 +75,7 @@ void read_file(void);
 int word_count(char *line);
 char *_strdup(char *str);
 char **handle_line(char *line);
+char **split_line(char *line);
 void malloc_error();
 void cannot_open_file();
 void monty_usage();

@@ -8,8 +8,11 @@
 int word_count(char *line)
 {
 	int count = 0;
-	char *w, *dup = _strdup(line);
+	char *w, *dup;
 
+	if (!line)
+		return (0);
+	dup = _strdup(line);
 	w = strtok(dup, " \t\n");
 	while (w)
 	{

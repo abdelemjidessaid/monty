@@ -16,7 +16,7 @@ void read_file(void)
 
 	while (fgets(line, sizeof(char) * BUF_SIZE, var.file))
 	{
-		array = handle_line(_strdup(line));
+		array = split_line(line);
 		if (array)
 		{
 			opcode = _strdup(array[0]);
