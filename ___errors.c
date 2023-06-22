@@ -14,3 +14,16 @@ void div_error(int type, unsigned int line_number)
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * mul_error - function that prints errors about multiplication instruction.
+ * @type: type of error.
+ * @line_number: number of current instruction's line.
+ * Return: void.
+*/
+void mul_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
+
