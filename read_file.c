@@ -19,7 +19,7 @@ void read_file(void)
 		array = split_line(line);
 		if (array)
 		{
-			opcode = _strdup(array[0]);
+			opcode = array[0];
 			if (strcmp(opcode, "push") == 0)
 			{
 				if (!array[1])
@@ -57,4 +57,5 @@ void free_array(char **array)
 		free(array[i]);
 		i++;
 	}
+	free(array);
 }

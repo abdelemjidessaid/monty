@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	var.stack = &stack;
 
 	read_file();
+	fclose(var.file);
 	free_stack();
 
 	/* free stack, array, line*/
@@ -45,5 +46,6 @@ void free_stack(void)
 			p = p->next;
 			free(tmp);
 		}
+		free(p);
 	}
 }

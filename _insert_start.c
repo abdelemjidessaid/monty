@@ -13,7 +13,7 @@ stack_t *insert_start(stack_t **head, int data)
 	if (head == NULL)
 		return (NULL);
 
-	tmp = (stack_t *) malloc(sizeof(stack_t *));
+	tmp = malloc(sizeof(stack_t));
 	if (tmp == NULL)
 		malloc_error();
 	tmp->next = NULL;

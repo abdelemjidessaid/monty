@@ -26,7 +26,6 @@ char **handle_line(char *line)
 		word = strtok(NULL, " \t\n");
 	}
 	array[i] = NULL;
-	free(line);
 
 	return (array);
 }
@@ -42,7 +41,7 @@ char **split_line(char *line)
 	{
 		if (strlen(line) <= 1)
 			return (NULL);
-		return (handle_line(_strdup(line)));
+		return (handle_line(line));
 	}
 	return (NULL);
 }
