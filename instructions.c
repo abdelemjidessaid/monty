@@ -84,3 +84,29 @@ void _pop(stack_t **stack, unsigned int line_number)
 	*stack = tmp;
 	free(p);
 }
+
+/**
+ * _swap - function that swaps top 2 elements of stack.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of current line.
+ * Return: void.
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top, *next, *tmp;
+
+	if (!stack || !(*stack) || !(*stack)->next)
+		swap_error(line_number);
+
+	top = *stack;
+	next = top->next;
+	tmp = next->next;
+
+	*stack = next;
+	next->prev = NULL;
+	next->next = top;
+	top->next = tmp;
+	top->prev = next;
+	if (tmp)
+		tmp->prev = top;
+}

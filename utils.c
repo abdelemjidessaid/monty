@@ -33,6 +33,7 @@ function find_function(char *opcode)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 	int i = 0;
