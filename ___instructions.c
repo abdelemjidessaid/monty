@@ -24,3 +24,15 @@ void _mod(stack_t **stack, unsigned int line_number)
 	*stack = next;
 	free(top);
 }
+
+/**
+ * _comment - function that do nothing.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of instruction's line.
+ * Return: void.
+*/
+void _comment(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+}

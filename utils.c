@@ -44,6 +44,7 @@ function find_function(char *opcode)
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"#", _comment},
 		{NULL, NULL}
 	};
 	int i = 0;

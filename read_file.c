@@ -13,18 +13,13 @@ void read_file(void)
 	line = malloc(sizeof(char) * BUF_SIZE);
 	if (!line)
 		malloc_error();
+
 	while (fgets(line, sizeof(char) * BUF_SIZE, var.file))
 	{
 		array = split_line(line);
 		if (array)
 		{
 			opcode = array[0];
-			if (strcmp(opcode, "#") == 0)
-			{
-				free_array(array);
-				count++;
-				continue;
-			}
 			if (strcmp(opcode, "push") == 0)
 			{
 				if (!array[1])
