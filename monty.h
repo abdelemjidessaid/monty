@@ -92,6 +92,7 @@ void add_error(unsigned int line_number);
 void sub_error(unsigned int line_number);
 void div_error(int type, unsigned int line_number);
 void mul_error(unsigned int line_number);
+void mod_error(unsigned int line_number);
 
 /* --------- INSTRUCTIONS --------- */
 void _push(stack_t **stack, unsigned int line_number);
@@ -104,6 +105,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 
 /* --------- MEMORY ---------*/
 void free_array(char **array);

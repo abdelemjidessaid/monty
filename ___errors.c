@@ -27,3 +27,15 @@ void mul_error(unsigned int line_number)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * mod_error - function that prints errors about rest of division instruction.
+ * @type: type of error.
+ * @line_number: number of current instruction's line.
+ * Return: void.
+*/
+void mod_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
+
