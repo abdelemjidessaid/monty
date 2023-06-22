@@ -35,10 +35,10 @@ void read_file(void)
 
 			f(var.stack, count);
 		}
+		free_array(array);
 		count++;
 	}
 	free(line);
-	free_array(array);
 }
 
 /**
