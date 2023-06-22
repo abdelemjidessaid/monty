@@ -12,9 +12,11 @@ void _mod(stack_t **stack, unsigned int line_number)
 	stack_t *top, *next;
 
 	if (!stack || !(*stack) || !(*stack)->next)
-		mod_error(line_number);
+		mod_error(1, line_number);
 
 	top = *stack;
+	if (top->n == 0)
+		mod_error(0, line_number);
 	next = top->next;
 
 	next->n %= top->n;

@@ -17,7 +17,6 @@ void div_error(int type, unsigned int line_number)
 
 /**
  * mul_error - function that prints errors about multiplication instruction.
- * @type: type of error.
  * @line_number: number of current instruction's line.
  * Return: void.
 */
@@ -33,9 +32,12 @@ void mul_error(unsigned int line_number)
  * @line_number: number of current instruction's line.
  * Return: void.
 */
-void mod_error(unsigned int line_number)
+void mod_error(int type, unsigned int line_number)
 {
-	fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+	if (type == 1)
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+	else
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 	exit(EXIT_FAILURE);
 }
 
