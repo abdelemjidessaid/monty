@@ -42,6 +42,7 @@ function find_function(char *opcode)
 		{"nop", _nop},
 		{"sub", _sub},
 		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 	int i = 0;
