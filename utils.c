@@ -12,11 +12,15 @@ int is_num(char *num)
 	if (num)
 	{
 		for (i = 0; num[i]; i++)
+		{
+			if (i == 0 && (num[0] == '-' || num[0] == '+'))
+				continue;
 			if (num[i] < '0' || num[i] > '9')
 				return (0);
+		}
 	}
 	else
-		return (1);
+		return (0);
 
 	return (1);
 }
