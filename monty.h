@@ -88,6 +88,7 @@ void inst_error(unsigned int line_number, char *opcode);
 void pint_error(unsigned int line_number);
 void pop_error(unsigned int line_number);
 void swap_error(unsigned int line_num);
+void add_error(unsigned int line_number);
 
 /* --------- INSTRUCTIONS --------- */
 void _push(stack_t **stack, unsigned int line_number);
@@ -95,11 +96,11 @@ void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 
 /* --------- MEMORY ---------*/
 void free_array(char **array);
 void free_stack(void);
-
 
 
 

@@ -32,3 +32,14 @@ void swap_error(unsigned int line_number)
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * add_error - function that prints an error about add.
+ * @line_number: number of current line.
+ * Return: void.
+*/
+void add_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
