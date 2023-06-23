@@ -8,7 +8,6 @@
 */
 void div_error(int type, unsigned int line_number)
 {
-	fclose(var.file);
 	if (type == 1)
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 	else if (type == 0)
@@ -23,7 +22,6 @@ void div_error(int type, unsigned int line_number)
 */
 void mul_error(unsigned int line_number)
 {
-	fclose(var.file);
 	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
@@ -36,7 +34,6 @@ void mul_error(unsigned int line_number)
 */
 void mod_error(int type, unsigned int line_number)
 {
-	fclose(var.file);
 	if (type == 1)
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 	else
