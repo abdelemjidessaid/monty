@@ -57,6 +57,8 @@ typedef struct variable
         FILE *file;
         int inst_code;
         stack_t **stack;
+        char **array;
+        char *line;
 } global_var;
 
 typedef void (*function)(stack_t **stack, unsigned int line_number);

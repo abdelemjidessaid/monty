@@ -6,6 +6,10 @@
  */
 void malloc_error(void)
 {
+	fclose(var.file);
+	free(var.line);
+	free_stack();
+	free_array(var.array);
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
@@ -18,6 +22,10 @@ void malloc_error(void)
  */
 void cannot_open_file(char *file_path)
 {
+	fclose(var.file);
+	free(var.line);
+	free_stack();
+	free_array(var.array);
 	fprintf(stderr, "Error: Can't open file %s\n", file_path);
 		exit(EXIT_FAILURE);
 }
@@ -29,6 +37,10 @@ void cannot_open_file(char *file_path)
  */
 void monty_usage(void)
 {
+	fclose(var.file);
+	free(var.line);
+	free_stack();
+	free_array(var.array);
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
@@ -40,6 +52,10 @@ void monty_usage(void)
 */
 void push_error(unsigned int line_number)
 {
+	fclose(var.file);
+	free(var.line);
+	free_stack();
+	free_array(var.array);
 	fprintf(stderr, "L%u: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
@@ -52,6 +68,10 @@ void push_error(unsigned int line_number)
  */
 void inst_error(unsigned int line_number, char *opcode)
 {
+	fclose(var.file);
+	free(var.line);
+	free_stack();
+	free_array(var.array);
 	fprintf(stderr, "L%d: unkown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }

@@ -7,26 +7,26 @@
 void read_file(void)
 {
 	unsigned int count = 1;
-	char *line, **array, *opcode;
+	char *opcode;
 	function f;
 
-	line = malloc(sizeof(char) * BUF_SIZE);
-	if (!line)
+	var.line = malloc(sizeof(char) * BUF_SIZE);
+	if (!var.line)
 		malloc_error();
 
-	while (fgets(line, sizeof(char) * BUF_SIZE, var.file))
+	while (fgets(var.line, sizeof(char) * BUF_SIZE, var.file))
 	{
-		array = split_line(line);
-		if (array)
+		var.array = split_line(var.line);
+		if (var.array)
 		{
-			opcode = array[0];
+			opcode = var.array[0];
 			if (strcmp(opcode, "push") == 0)
 			{
-				if (!array[1])
+				if (!var.array[1])
 					push_error(count);
-				if (!is_num(array[1]))
+				if (!is_num(var.array[1]))
 					push_error(count);
-				var.inst_code = atoi(array[1]);
+				var.inst_code = atoi(var.array[1]);
 			}
 
 			f = find_function(opcode);
@@ -35,10 +35,10 @@ void read_file(void)
 
 			f(var.stack, count);
 		}
-		free_array(array);
+		free_array(var.array);
 		count++;
 	}
-	free(line);
+	free(var.line);
 }
 
 /**
