@@ -111,28 +111,22 @@ void _rotl(stack_t **stack, unsigned int line_number)
 */
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top, *bottom;
+	stack_t *last;
 	int data;
 	(void) line_number;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return;
 
-	top = *stack;
-	bottom = *stack;
-	while (bottom->next)
-		bottom = bottom->next;
+	last = *stack;
+	while (last->next)
+		last = last->next;
 
-	while (top && bottom)
+	data = last->n;
+	while (last->prev)
 	{
-		data = top->n;
-		top->n = bottom->n;
-		bottom->n = data;
-
-		bottom = bottom->prev;
-		top = top->next;
-
-		if (top->next != bottom)
-			break;
+		last = last->prev;
+		last->next->n = last->n;
 	}
+	last->n = data;
 }
