@@ -100,5 +100,5 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		top->prev->n = top->n;
 	}
 
-	top->n = data;	
+	top->n = data;
 }
