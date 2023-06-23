@@ -1,5 +1,7 @@
 #include "monty.h"
 
+int is_comment(char *line, unsigned int *line_number);
+
 /**
  * read_file - function that a given reads file, line by line.
  * Return: void.
@@ -16,6 +18,8 @@ void read_file(void)
 
 	while (fgets(var.line, sizeof(char) * BUF_SIZE, var.file))
 	{
+		if (is_comment(var.line, &count))
+			continue;
 		var.array = split_line(var.line);
 		if (var.array)
 		{
@@ -58,4 +62,20 @@ void free_array(char **array)
 		i++;
 	}
 	free(array);
+}
+
+/**
+ * is_comment - function that checks line if starts with #
+ * @line: pointer to line.
+ * @line_number: number of current line.
+ * Return: 1 if it is comment, 0 otherwise.
+*/
+int is_comment(char *line, unsigned int *line_number)
+{
+	if (!line || line[0] == '#')
+	{
+		line_number++;
+		return (1);
+	}
+	return (0);
 }
