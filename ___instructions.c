@@ -102,3 +102,37 @@ void _rotl(stack_t **stack, unsigned int line_number)
 
 	top->n = data;
 }
+
+/**
+ * _rotr - function that rotates the stack to bottom.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of instruction's line.
+ * Return: void.
+*/
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top, *bottom;
+	int data;
+	(void) line_number;
+
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
+
+	top = *stack;
+	bottom = *stack;
+	while (bottom->next)
+		bottom = bottom->next;
+
+	while (top && bottom)
+	{
+		data = top->n;
+		top->n = bottom->n;
+		bottom->n = data;
+
+		bottom = bottom->prev;
+		top = top->next;
+
+		if (top->next != bottom)
+			break;
+	}
+}

@@ -10,6 +10,7 @@ global_var var;
 int main(int argc, char *argv[])
 {
 	stack_t *stack = NULL;
+	int status;
 
 	if (argc != 2)
 		monty_usage();
@@ -21,8 +22,10 @@ int main(int argc, char *argv[])
 	var.stack = &stack;
 
 	read_file();
-	fclose(var.file);
+	status = fclose(var.file);
 	free_stack();
+	if (status == -1)
+		exit(-1);
 
 	return (0);
 }
