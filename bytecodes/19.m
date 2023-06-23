@@ -1,14 +1,10 @@
 ###
 ###
 ###
-push 1
-pchar
 push 0
 pchar
-pop
-pop
-push 128
+push 1
+push 2
 pchar
+rotl
 pall
-pop
-pchar

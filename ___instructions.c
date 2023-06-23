@@ -75,3 +75,30 @@ void _pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 	}
 	printf("\n");
 }
+
+/**
+ * _rotl - function that rotates a stack the first element becomes the last,
+ * and the second element becomes the top or first.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of instruction's line.
+ * Return: void.
+ */
+void _rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top;
+	int data;
+	(void) line_number;
+
+	if (!stack || !(*stack) || !(*stack)->next)
+		return;
+
+	top = *stack;
+	data = top->n;
+	while (top->next)
+	{
+		top = top->next;
+		top->prev->n = top->n;
+	}
+
+	top->n = data;	
+}
