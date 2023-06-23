@@ -68,7 +68,6 @@ void free_array(char **array)
 /**
  * is_comment - function that checks line if starts with #
  * @line: pointer to line.
- * @line_number: number of current line.
  * Return: 1 if it is comment, 0 otherwise.
 */
 int is_comment(char *line)
