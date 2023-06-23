@@ -46,6 +46,7 @@ function find_function(char *opcode)
 		{"mod", _mod},
 		{"#", _comment},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 	int i = 0;

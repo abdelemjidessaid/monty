@@ -58,3 +58,32 @@ void _pchar(stack_t **stack, unsigned int line_number)
 		pchar_error(0, line_number);
 	printf("%c\n", value);
 }
+
+/**
+ * _pstr - function that prints all elements of stack as characters,
+ * and stops when stack is over or reach a value equals 0.
+ * @stack: pointer of pointer to the stack.
+ * @line_number: number of instruction's line.
+ * Return: void.
+*/
+void _pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+{
+	stack_t *top;
+	int value;
+
+	if (!stack)
+	{
+		printf("\n");
+		return;
+	}
+	top = *stack;
+	while(top)
+	{
+		value = top->n;
+		if (value == 0 || !is_ascii(value))
+			break;
+		printf("%c", value);
+		top = top->next;
+	}
+	printf("\n");
+}
