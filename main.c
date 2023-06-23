@@ -27,8 +27,6 @@ int main(int argc, char *argv[])
 	if (status == -1)
 		exit(-1);
 
-	/* free stack, array, line*/
-
 	return (0);
 }
 
