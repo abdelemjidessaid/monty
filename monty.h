@@ -8,7 +8,7 @@
 
 
 /* ___________MACROS__________*/
-#define BUF_SIZE 1024
+#define BUF_SIZE 4096
 
 
 
