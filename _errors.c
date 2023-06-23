@@ -6,10 +6,6 @@
  */
 void malloc_error(void)
 {
-	/*fclose(var.file);
-	free(var.line);
-	free_stack();
-	free_array(var.array);*/
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }

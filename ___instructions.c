@@ -77,7 +77,7 @@ void _pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 		return;
 	}
 	top = *stack;
-	while(top)
+	while (top)
 	{
 		value = top->n;
 		if (value == 0 || !is_ascii(value))
