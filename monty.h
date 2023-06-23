@@ -80,6 +80,7 @@ char **handle_line(char *line);
 char **split_line(char *line);
 int is_num(char *num);
 function find_function(char *opcode);
+int is_ascii(int ascii);
 
 /* ----------ERROR FUNCTIONS ----------*/
 void malloc_error();
@@ -95,6 +96,7 @@ void sub_error(unsigned int line_number);
 void div_error(int type, unsigned int line_number);
 void mul_error(unsigned int line_number);
 void mod_error(int type, unsigned int line_number);
+void pchar_error(int type, unsigned int line_number);
 
 /* --------- INSTRUCTIONS --------- */
 void _push(stack_t **stack, unsigned int line_number);
@@ -109,6 +111,7 @@ void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _comment(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 
 /* --------- MEMORY ---------*/
 void free_array(char **array);

@@ -41,3 +41,18 @@ void mod_error(int type, unsigned int line_number)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * pchar_error - function that prints errors about pchar instruction.
+ * @type: type of error.
+ * @line_number: number of current instruction's line.
+ * Return: void.
+*/
+void pchar_error(int type, unsigned int line_number)
+{
+	if (type == 1)
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+	else
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+	exit(EXIT_FAILURE);
+}
+

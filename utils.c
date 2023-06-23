@@ -45,6 +45,7 @@ function find_function(char *opcode)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"#", _comment},
+		{"pchar", _pchar},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -57,4 +58,14 @@ function find_function(char *opcode)
 	}
 
 	return (fs[i].f);
+}
+
+/**
+ * is_ascii - function that checks a number if it is out of range.
+ * @ascii: ascii number.
+ * Return: 1 if ascii, 0 otherwise.
+ */
+int is_ascii(int ascii)
+{
+	return (ascii >= 64 && ascii <= 127);
 }
