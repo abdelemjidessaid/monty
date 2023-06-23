@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int is_comment(char *line, unsigned int *line_number);
+int is_comment(char *line);
 
 /**
  * read_file - function that a given reads file, line by line.
@@ -15,11 +15,13 @@ void read_file(void)
 	var.line = malloc(sizeof(char) * BUF_SIZE);
 	if (!var.line)
 		malloc_error();
-
 	while (fgets(var.line, sizeof(char) * BUF_SIZE, var.file))
 	{
-		if (is_comment(var.line, &count))
+		if (is_comment(var.line))
+		{
+			count++;
 			continue;
+		}
 		var.array = split_line(var.line);
 		if (var.array)
 		{
@@ -32,7 +34,6 @@ void read_file(void)
 					push_error(count);
 				var.inst_code = atoi(var.array[1]);
 			}
-
 			f = find_function(opcode);
 			if (f == NULL)
 				inst_error(count, opcode);
@@ -70,12 +71,7 @@ void free_array(char **array)
  * @line_number: number of current line.
  * Return: 1 if it is comment, 0 otherwise.
 */
-int is_comment(char *line, unsigned int *line_number)
+int is_comment(char *line)
 {
-	if (!line || line[0] == '#')
-	{
-		line_number++;
-		return (1);
-	}
-	return (0);
+	return (!line || line[0] == '#');
 }
