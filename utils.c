@@ -67,5 +67,5 @@ function find_function(char *opcode)
  */
 int is_ascii(int ascii)
 {
-	return (ascii >= 64 && ascii <= 127);
+	return (ascii >= 0 && ascii <= 127);
 }
