@@ -24,8 +24,6 @@ int main(int argc, char *argv[])
 	read_file();
 	status = fclose(var.file);
 	free_stack();
-	if (status == -1)
-		exit(-1);
 
 	return (0);
 }
